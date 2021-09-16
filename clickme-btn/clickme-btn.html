@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click me button</title>
+</head>
+<body>
+
+<button id="clickMe">Click me!</button>
+
+<p>You've clicked the button <span id="numClicks">0 times</span>.</p>
+
+<script>
+  let clicks = 0;
+
+  function clickHandler() {
+    clicks++;
+    const numClicksSpan = document.getElementById('numClicks');
+    if (clicks == 1)
+      numClicksSpan.innerHTML = 'once';
+    else
+      numClicksSpan.innerHTML = clicks + ' ' + 'times'
+  }
+
+  const button = document.getElementById('clickMe');
+  button.addEventListener('click', clickHandler);
+
+</script>
+
+</body>
+</html>
