@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse over text</title>
+</head>
+<body>
+
+<p> <div id="mouseOverme">Put your mouse here!</div> </p>
+<p> <div class="highlightText"> This is some text. </p>
+<p> <div> This is some other text. </div></p>
+<p> <div class="highlightText"> This text is important too. </div> </p>
+
+<script>
+
+  function makebold() {
+    const highlightDivs = document.getElementsByClassName('highlightText');
+    // iterate over each element of highlightDivs array
+    for (let i = 0; i < highlightDivs.lenght; i++) {
+      highlightDivs[i].style.color = 'red';
+      highlightDivs[i].style.fontWeight = 'bold';
+    }
+  }
+
+  function restore() {
+    const highlightDivs = document.getElementsByClassName('highlightText');
+    for (let i = 0; i < highlightDivs.lenght; i++) {
+      highlightDivs[i].style.color = 'black';
+      highlightDivs[i].style.fontWeight = 'normal';
+    }
+  }
+
+  let mouseOvermeDiv = document.getElementById('mouseOverme');
+  mouseOvermeDiv.addEventListener('mouseover', makebold);
+  mouseOvermeDiv.addEventListener('mouseout', restore);
+
+</script>
+
+
+</body>
+</html>
