@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number of visits</title>
+</head>
+<body>
+
+  <div>You have visited this page <span id="report"> </span> times.</div>
+  <br>
+  <div>The current date/time is <span id="dateTime"> </span>.</div>
+
+  <script>
+    let timesVisited = 0;
+
+    if (localStorage.timesVisited) {
+      timesVisited = parseInt(localStorage.timesVisited);
+    }
+
+    timesVisited += 1;
+
+    // set 'timesVisited' property to timesVisited value in localStorage
+    localStorage.setItem('timesVisited', timesVisited);
+
+    let report = document.getElementById('report');
+    report.innerHTML = timesVisited;
+
+    if (timesVisited > 2)
+      report.style.backgroundColor = 'yellow';
+
+    let dateTimeField = document.getElementById('dateTime');
+    dateTimeField.innerHTML = new Date();
+
+  </script>
+
+</body>
+</html>
